@@ -3,16 +3,16 @@ INSERT INTO depts
 VALUES
   ('Management'),
   ('Development'),
-  ('Quality Assurance')
+  ('Quality Assurance');
 
 INSERT INTO roles
   (title, salary)
 VALUES
-  ('Manager', 150,000),
-  ('LeadDev', 100,000),
-  ('Intern', 50,000),
-  ('Developer', 75,000),
-  ('QATester', 50,000)
+  ('Manager', 150000),
+  ('LeadDev', 100000),
+  ('Intern', 50000),
+  ('Developer', 75000),
+  ('QATester', 50000);
 
 INSERT INTO employees
   (first_name, last_name)
@@ -21,4 +21,4 @@ VALUES
   ('Esme', 'Perez'),
   ('Quintin', 'Williams'),
   ('Anya', 'Nowak'),
-  ('Kwame', 'Ture')
+  ('Kwame', 'Ture');
