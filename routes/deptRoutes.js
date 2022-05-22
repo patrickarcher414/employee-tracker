@@ -49,7 +49,7 @@ router.delete("/depts/:id", (req, res) => {
       res.status(400).json({ error: res.message });
     } else if (!result.affectedRows) {
       res.json({
-        message: "Party not found",
+        message: "Dept not found",
       });
     } else {
       res.json({

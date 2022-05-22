@@ -18,10 +18,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use("/routes", routes);
 
-// // Default error response for any request not found
-// app.use((req, res) => {
-//   res.status(404).end();
-// });
+// Default error response for any request not found
+app.use((req, res) => {
+  res.status(404).end();
+});
 
 // Start server after connecting to database
 db.connect((err) => {
@@ -31,3 +31,5 @@ db.connect((err) => {
     console.log(`Server running on port ${PORT}`);
   });
 });
+
+prompt();
