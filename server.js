@@ -1,8 +1,7 @@
 const express = require("express");
-
 const PORT = process.env.PORT || 3001;
 const app = express();
-
+const prompts = require("./utils");
 const routes = require("./routes");
 const mysql = require("mysql2");
 require("dotenv").config();
@@ -32,4 +31,4 @@ db.connect((err) => {
   });
 });
 
-prompt();
+prompts();
