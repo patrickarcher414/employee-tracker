@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-
+const routes = require("../routes/index");
 const prompts = () => {
   inquirer
     .prompt([
@@ -19,47 +19,28 @@ const prompts = () => {
       },
     ])
     .then((data) => {
-      if (data.choices === "Quit") {
+      if (data.empTracker === "Quit") {
         return;
       }
-      if (data.choices === "View all Departments") {
+      if (data.empTracker === "View all Departments") {
         getDepts();
       }
-      if (data.choices === "View all Roles") {
+      if (data.empTracker === "View all Roles") {
         getRoles();
       }
-      if (data.choices === "View all Employees") {
+      if (data.empTracker === "View all Employees") {
         getEmps();
       }
-      if (data.choices === "Add Department") {
+      if (data.empTracker === "Add Department") {
         addDept();
       }
-      if (data.choices === "Add Role") {
+      if (data.empTracker === "Add Role") {
         addRole();
       }
-      if (data.choices === "Add Employee") {
+      if (data.empTracker === "Add Employee") {
         addEmp();
       }
-      return;
     });
-};
-const addEmp = () => {
-  console.log("hello from addEmp!");
-};
-const addRole = () => {
-  console.log("hello from addRole!");
-};
-const addDept = () => {
-  console.log("hello from addDept!");
-};
-const getEmps = () => {
-  console.log("hello from getEmps!");
-};
-const getRoles = () => {
-  console.log("hello from getRoles!");
-};
-const getDepts = () => {
-  console.log("hello from getDepts!");
 };
 
 module.exports = prompts;
