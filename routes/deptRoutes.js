@@ -7,7 +7,8 @@ const getDepts = () => {
   router.get("/depts", (req, res) => {
     const sql = `SELECT * FROM depts`;
 
-    db.query(sql, (err, rows) => {
+    db.query(sql, (err, res) => {
+      console.table(res);
       if (err) {
         res.status(500).json({ error: err.message });
         return;
@@ -25,7 +26,8 @@ const addDept = () => {
   router.post("/depts", (req, res) => {
     const sql = `INSERT INTO depts (dept_name)`;
 
-    db.query(sql, (err, rows) => {
+    db.query(sql, (err, res) => {
+      console.table(res);
       if (err) {
         res.status(500).json({ error: err.message });
         return;

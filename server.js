@@ -32,3 +32,5 @@ db.connect((err) => {
 });
 
 prompts();
+
+module.exports = server;

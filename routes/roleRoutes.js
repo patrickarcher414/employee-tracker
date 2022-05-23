@@ -7,7 +7,8 @@ const getRoles = () => {
   router.get("/roles", (req, res) => {
     const sql = `SELECT * FROM roles`;
 
-    db.query(sql, (err, rows) => {
+    db.query(sql, (err, res) => {
+      console.table(res);
       if (err) {
         res.status(500).json({ error: err.message });
         return;
@@ -26,7 +27,8 @@ const addRole = () => {
     const sql = `INSERT INTO roles (title, salary, depts_id)
     VALUES (req.params.)`;
 
-    db.query(sql, (err, rows) => {
+    db.query(sql, (err, res) => {
+      console.table(res);
       if (err) {
         res.status(500).json({ error: err.message });
         return;

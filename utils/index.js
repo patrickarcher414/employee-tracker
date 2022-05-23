@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const routes = require("../routes/index");
+const db = require("../server");
 const prompts = () => {
   inquirer
     .prompt([
@@ -19,25 +20,25 @@ const prompts = () => {
       },
     ])
     .then((data) => {
-      if (data.empTracker === "Quit") {
-        return;
+      if (data.choices === "Quit") {
+        db.end();
       }
-      if (data.empTracker === "View all Departments") {
+      if (data.choices === "View all Departments") {
         getDepts();
       }
-      if (data.empTracker === "View all Roles") {
+      if (data.choices === "View all Roles") {
         getRoles();
       }
-      if (data.empTracker === "View all Employees") {
+      if (data.choices === "View all Employees") {
         getEmps();
       }
-      if (data.empTracker === "Add Department") {
+      if (data.choices === "Add Department") {
         addDept();
       }
-      if (data.empTracker === "Add Role") {
+      if (data.choices === "Add Role") {
         addRole();
       }
-      if (data.empTracker === "Add Employee") {
+      if (data.choices === "Add Employee") {
         addEmp();
       }
     });
