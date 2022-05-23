@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const routes = require("../routes/index");
+const routes = require("../routes");
 const db = require("../server");
 const prompts = () => {
   inquirer
@@ -19,27 +19,27 @@ const prompts = () => {
         ],
       },
     ])
-    .then((data) => {
-      if (data.choices === "Quit") {
-        db.end();
-      }
-      if (data.choices === "View all Departments") {
+    .then(({ empTracker }) => {
+      if (empTracker === "View all Departments") {
         getDepts();
       }
-      if (data.choices === "View all Roles") {
+      if (empTracker === "View all Roles") {
         getRoles();
       }
-      if (data.choices === "View all Employees") {
+      if (empTracker === "View all Employees") {
         getEmps();
       }
-      if (data.choices === "Add Department") {
+      if (empTracker === "Add Department") {
         addDept();
       }
-      if (data.choices === "Add Role") {
+      if (empTracker === "Add Role") {
         addRole();
       }
-      if (data.choices === "Add Employee") {
+      if (empTracker === "Add Employee") {
         addEmp();
+      }
+      if (empTracker === "Quit") {
+        db.end();
       }
     });
 };
